@@ -106,7 +106,8 @@ window.Actions = {
   },
   thunderJolt: {
     name: "Thunder Jolt",
-    description: "The user releases a sudden jolt of electricity, shocking the enemy.",
+    description:
+      "The user releases a sudden jolt of electricity, shocking the enemy.",
     success: [
       { type: "textMessage", text: "{CASTER} uses {ACTION}!" },
       { type: "animation", animation: "electricZap" },
@@ -115,7 +116,8 @@ window.Actions = {
   },
   naturesGrasp: {
     name: "Nature's Grasp",
-    description: "The user summons vines and roots from the ground to trap the enemy.",
+    description:
+      "The user summons vines and roots from the ground to trap the enemy.",
     success: [
       { type: "textMessage", text: "{CASTER} uses {ACTION}!" },
       { type: "animation", animation: "vineWhip" },
@@ -129,13 +131,21 @@ window.Actions = {
     success: [
       { type: "textMessage", text: "{CASTER} uses {ACTION}!" },
       { type: "animation", animation: "shadowVanish" },
-      { type: "stateChange", status: { type: "evade", expiresIn: 2 }, onCaster: true },
-      { type: "textMessage", text: "{CASTER} is ready to dodge the next attack!" },
+      {
+        type: "stateChange",
+        status: { type: "evade", expiresIn: 2 },
+        onCaster: true,
+      },
+      {
+        type: "textMessage",
+        text: "{CASTER} is ready to dodge the next attack!",
+      },
     ],
   },
   galeBurst: {
     name: "Gale Burst",
-    description: "The user summons a powerful gust of wind to knock back the enemy.",
+    description:
+      "The user summons a powerful gust of wind to knock back the enemy.",
     success: [
       { type: "textMessage", text: "{CASTER} uses {ACTION}!" },
       { type: "animation", animation: "windBlast" },
@@ -144,20 +154,36 @@ window.Actions = {
   },
   recoverPulse: {
     name: "Recover Pulse",
-    description: "The user surrounds themselves in healing energy, recovering some health over time.",
+    description:
+      "The user surrounds themselves in healing energy, recovering some health over time.",
     success: [
       { type: "textMessage", text: "{CASTER} uses {ACTION}!" },
-      { type: "stateChange", status: { type: "recover", expiresIn: 2 }, onCaster: true },
-      { type: "textMessage", text: "{CASTER} will recover health for a while!" },
+      {
+        type: "stateChange",
+        status: { type: "recover", expiresIn: 2 },
+        onCaster: true,
+      },
+      {
+        type: "textMessage",
+        text: "{CASTER} will recover health for a while!",
+      },
     ],
   },
   grandRenewal: {
     name: "Grand Renewal",
-    description: "The user invokes a greater healing aura, recovering large amounts of health over time.",
+    description:
+      "The user invokes a greater healing aura, recovering large amounts of health over time.",
     success: [
       { type: "textMessage", text: "{CASTER} uses {ACTION}!" },
-      { type: "stateChange", status: { type: "recover", expiresIn: 3 }, onCaster: true },
-      { type: "textMessage", text: "{CASTER} will recover health for a long time!" },
+      {
+        type: "stateChange",
+        status: { type: "recover", expiresIn: 3 },
+        onCaster: true,
+      },
+      {
+        type: "textMessage",
+        text: "{CASTER} will recover health for a long time!",
+      },
     ],
   },
 
@@ -194,5 +220,4 @@ window.Actions = {
     ],
     targetType: "enemy",
   },
-  
 };

@@ -3,14 +3,21 @@
 */
 
 class Battle {
-  constructor({ enemy, onComplete, battleBackgroundSrc, isWildEncounter = false, map }) {
+  constructor({
+    enemy,
+    onComplete,
+    battleBackgroundSrc,
+    isWildEncounter = false,
+    map,
+  }) {
     this.enemy = enemy;
     this.onComplete = onComplete;
     this.map = map;
 
     this.isWildEncounter = isWildEncounter;
 
-    this.battleBackgroundSrc = battleBackgroundSrc || "./images/maps/DemoBattle.png";
+    this.battleBackgroundSrc =
+      battleBackgroundSrc || "./images/maps/DemoBattle.png";
 
     this.backgroundImage = new Image();
     this.backgroundImage.src = this.battleBackgroundSrc;
@@ -27,10 +34,10 @@ class Battle {
       this.addCombatant(id, "player", window.playerState.evolisks[id]);
     });
 
-   // Now the enemy team
+    // Now the enemy team
     Object.keys(this.enemy.evolisks).forEach((key) => {
-     this.addCombatant("e_" + key, "enemy", { ...this.enemy.evolisks[key] });
-      });
+      this.addCombatant("e_" + key, "enemy", { ...this.enemy.evolisks[key] });
+    });
 
     // Start empty
     this.items = [];
@@ -49,7 +56,7 @@ class Battle {
   addCombatant(id, team, config) {
     // If it's a wild encounter, and the combatant is a person (trainer), skip adding it
     const isTrainerEvolisk = this.isWildEncounter && config.isPerson;
-  
+
     if (isTrainerEvolisk) {
       return; // Skip adding trainer's Evolisk
     }
@@ -57,7 +64,7 @@ class Battle {
     if (config.isMutated && config.mutatedSrc) {
       config.src = config.mutatedSrc;
     }
-  
+
     this.combatants[id] = new Combatant(
       {
         ...Evolisks[config.evoliskId],
@@ -68,26 +75,27 @@ class Battle {
       },
       this
     );
-  
+
     if (!this.activeCombatants[team]) {
-      const firstHealthyId = Object.keys(this.combatants)
-        .filter(cid => this.combatants[cid].team === team && this.combatants[cid].hp > 0)[0];
+      const firstHealthyId = Object.keys(this.combatants).filter(
+        (cid) =>
+          this.combatants[cid].team === team && this.combatants[cid].hp > 0
+      )[0];
       if (firstHealthyId) {
         this.activeCombatants[team] = firstHealthyId;
       }
     }
   }
-  
 
   // Draw the battle element (hero and enemy)
   createElement() {
     this.element = document.createElement("div");
     this.element.classList.add("Battle");
-  
+
     if (this.battleBackgroundSrc) {
       this.element.style.backgroundImage = `url(${this.battleBackgroundSrc})`;
     }
-  
+
     // Only show the trainer if NOT a wild battle
     let enemyHTML = "";
     if (!this.isWildEncounter) {
@@ -97,7 +105,7 @@ class Battle {
         </div>
       `;
     }
-  
+
     this.element.innerHTML = `
       <div class="Battle_hero">
         <img src="./images/characters/people/Kairo_Hero.png" alt="Hero" />
@@ -105,55 +113,57 @@ class Battle {
       ${enemyHTML}
     `;
   }
-  
-  
+
   init(container) {
     this.createElement();
     container.appendChild(this.element);
-  
+
     this.playerTeam = new Team("player", "Hero");
     this.enemyTeam = new Team("enemy", "Bully");
-  
+
     Object.keys(this.combatants).forEach((key) => {
       let combatant = this.combatants[key];
       combatant.id = key;
-  
+
       //  Skip mounting enemy Person if this is a wild encounter
-      if (this.isWildEncounter && combatant.team === "enemy" && combatant.isPerson) {
+      if (
+        this.isWildEncounter &&
+        combatant.team === "enemy" &&
+        combatant.isPerson
+      ) {
         return;
       }
 
-  
       combatant.init(this.element, {
         team: combatant.team,
         isWildEncounter: this.isWildEncounter,
       });
-  
+
       if (combatant.team === "player") {
         this.playerTeam.combatants.push(combatant);
       } else if (combatant.team === "enemy") {
         this.enemyTeam.combatants.push(combatant);
       }
     });
-  
+
     this.playerTeam.init(this.element);
     this.enemyTeam.init(this.element);
-  
-   // Set the first active player Evolisk
-this.activeCombatants = {
-  player: this.playerTeam.getFirstAlive(),
-};
 
-// For wild encounters, find the enemy differently
-if (this.isWildEncounter) {
-  const enemyIds = Object.keys(this.combatants).filter(id => {
-    return this.combatants[id].team !== "player";
-  });
-  this.activeCombatants.enemy = enemyIds[0];
-} else {
-  this.activeCombatants.enemy = this.enemyTeam.getFirstAlive();
-}
-  
+    // Set the first active player Evolisk
+    this.activeCombatants = {
+      player: this.playerTeam.getFirstAlive(),
+    };
+
+    // For wild encounters, find the enemy differently
+    if (this.isWildEncounter) {
+      const enemyIds = Object.keys(this.combatants).filter((id) => {
+        return this.combatants[id].team !== "player";
+      });
+      this.activeCombatants.enemy = enemyIds[0];
+    } else {
+      this.activeCombatants.enemy = this.enemyTeam.getFirstAlive();
+    }
+
     this.turnCycle = new TurnCycle({
       battle: this,
       map: this.map,
@@ -176,9 +186,9 @@ if (this.isWildEncounter) {
               playerStateEvolisk.level = combatant.level;
             }
           });
-  
+
           utils.emitEvent("PlayerStateUpdated");
-  
+
           playerState.items = playerState.items.filter((item) => {
             return !this.usedInstanceIds[item.instanceId];
           });
@@ -187,9 +197,7 @@ if (this.isWildEncounter) {
         this.onComplete(winner === "player");
       },
     });
-    
+
     this.turnCycle.init();
   }
-
-
 }

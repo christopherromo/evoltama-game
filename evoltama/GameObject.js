@@ -24,7 +24,6 @@ class GameObject {
   }
 
   mount(map) {
-    
     this.isMounted = true;
 
     // If we have a behavior, kick off after a short delay

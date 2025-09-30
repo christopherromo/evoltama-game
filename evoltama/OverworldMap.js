@@ -102,7 +102,6 @@ class OverworldMap {
       }
     }
 
-    
     this.isCutscenePlaying = false;
 
     // Reset NPCS to do their idle behavior

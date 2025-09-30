@@ -5,13 +5,18 @@
 window.BattleAnimations = {
   async spin(event, onComplete) {
     const element = event.caster.evoliskElement;
-    const animationClassName = event.caster.team === "player" ? "battle-spin-right" : "battle-spin-left";
+    const animationClassName =
+      event.caster.team === "player" ? "battle-spin-right" : "battle-spin-left";
     element.classList.add(animationClassName);
 
-    element.addEventListener("animationend", () => {
-      element.classList.remove(animationClassName);
-      onComplete();
-    }, { once: true });
+    element.addEventListener(
+      "animationend",
+      () => {
+        element.classList.remove(animationClassName);
+        onComplete();
+      },
+      { once: true }
+    );
 
     await utils.wait(100);
   },
@@ -44,34 +49,52 @@ window.BattleAnimations = {
 
   async phantomCharge(event, onComplete) {
     const element = event.caster.evoliskElement;
-    const animationClassName = event.caster.team === "player" ? "battle-phantom-charge-right" : "battle-phantom-charge-left";
+    const animationClassName =
+      event.caster.team === "player"
+        ? "battle-phantom-charge-right"
+        : "battle-phantom-charge-left";
     element.classList.add(animationClassName);
 
-    element.addEventListener("animationend", () => {
-      element.classList.remove(animationClassName);
-      onComplete();
-    }, { once: true });
+    element.addEventListener(
+      "animationend",
+      () => {
+        element.classList.remove(animationClassName);
+        onComplete();
+      },
+      { once: true }
+    );
   },
 
   async voidHowl(event, onComplete) {
     const element = event.caster.evoliskElement;
     element.classList.add("battle-void-howl");
 
-    element.addEventListener("animationend", () => {
-      element.classList.remove("battle-void-howl");
-      onComplete();
-    }, { once: true });
+    element.addEventListener(
+      "animationend",
+      () => {
+        element.classList.remove("battle-void-howl");
+        onComplete();
+      },
+      { once: true }
+    );
   },
 
   async electricZap(event, onComplete) {
     const element = event.caster.evoliskElement;
-    const animationClassName = event.caster.team === "player" ? "battle-electric-zap-right" : "battle-electric-zap-left";
+    const animationClassName =
+      event.caster.team === "player"
+        ? "battle-electric-zap-right"
+        : "battle-electric-zap-left";
     element.classList.add(animationClassName);
 
-    element.addEventListener("animationend", () => {
-      element.classList.remove(animationClassName);
-      onComplete();
-    }, { once: true });
+    element.addEventListener(
+      "animationend",
+      () => {
+        element.classList.remove(animationClassName);
+        onComplete();
+      },
+      { once: true }
+    );
   },
 
   async vineWhip(event, onComplete) {
@@ -79,7 +102,9 @@ window.BattleAnimations = {
     const div = document.createElement("div");
     div.classList.add("battle-vine-whip");
     div.classList.add(
-      caster.team === "player" ? "battle-vine-whip-right" : "battle-vine-whip-left"
+      caster.team === "player"
+        ? "battle-vine-whip-right"
+        : "battle-vine-whip-left"
     );
 
     div.innerHTML = `
@@ -102,50 +127,67 @@ window.BattleAnimations = {
     const element = event.caster.evoliskElement;
     element.classList.add("battle-shadow-vanish");
 
-    element.addEventListener("animationend", () => {
-      element.classList.remove("battle-shadow-vanish");
-      onComplete();
-    }, { once: true });
+    element.addEventListener(
+      "animationend",
+      () => {
+        element.classList.remove("battle-shadow-vanish");
+        onComplete();
+      },
+      { once: true }
+    );
   },
 
   async windBlast(event, onComplete) {
     const element = event.caster.evoliskElement;
-    const animationClassName = event.caster.team === "player" ? "battle-wind-blast-right" : "battle-wind-blast-left";
+    const animationClassName =
+      event.caster.team === "player"
+        ? "battle-wind-blast-right"
+        : "battle-wind-blast-left";
     element.classList.add(animationClassName);
 
-    element.addEventListener("animationend", () => {
-      element.classList.remove(animationClassName);
-      onComplete();
-    }, { once: true });
+    element.addEventListener(
+      "animationend",
+      () => {
+        element.classList.remove(animationClassName);
+        onComplete();
+      },
+      { once: true }
+    );
   },
 
   async paralyzingDust(event, onComplete) {
     const { caster } = event;
     const container = document.querySelector(".Battle");
-  
+
     for (let i = 0; i < 8; i++) {
       const dust = document.createElement("div");
       dust.classList.add("battle-paralyzing-dust");
       dust.classList.add(
-        caster.team === "player" ? "battle-paralyzing-dust-right" : "battle-paralyzing-dust-left"
+        caster.team === "player"
+          ? "battle-paralyzing-dust-right"
+          : "battle-paralyzing-dust-left"
       );
-  
+
       dust.style.left = `${
-        caster.team === "player" ? 70 + (Math.random() * 10 - 5) : 180 + (Math.random() * 10 - 5)
+        caster.team === "player"
+          ? 70 + (Math.random() * 10 - 5)
+          : 180 + (Math.random() * 10 - 5)
       }px`;
       dust.style.top = `${
-        caster.team === "player" ? 105 + (Math.random() * 10 - 5) : 65 + (Math.random() * 10 - 5)
+        caster.team === "player"
+          ? 105 + (Math.random() * 10 - 5)
+          : 65 + (Math.random() * 10 - 5)
       }px`;
-  
+
       container.appendChild(dust);
-  
+
       dust.addEventListener("animationend", () => {
         dust.remove();
       });
-  
+
       await utils.wait(50); // stagger dust creation
     }
-  
+
     await utils.wait(700);
     onComplete();
   },
@@ -188,12 +230,10 @@ window.BattleAnimations = {
     onComplete();
   },
 
-  
-
   async throwCaptureDisc(event, onComplete) {
     const { caster } = event;
     const container = document.querySelector(".Battle");
-  
+
     const disc = document.createElement("img");
     disc.src = "./images/tempDisc.png"; // your placeholder disc
     disc.classList.add("capture-disc");
@@ -205,30 +245,39 @@ window.BattleAnimations = {
     disc.style.top = `${caster.team === "player" ? 100 : 70}px`;
     disc.style.transform = "scale(1)";
     container.appendChild(disc);
-  
+
     // Animate flying toward target
-    await disc.animate([
-      { transform: `translate(0px, 0px) scale(1)` },
-      { transform: `translate(${caster.team === "player" ? 80 : -80}px, ${caster.team === "player" ? -40 : 40}px) scale(1.2)` },
-    ], {
-      duration: 500,
-      fill: "forwards",
-      easing: "ease-out",
-    }).finished;
-  
+    await disc.animate(
+      [
+        { transform: `translate(0px, 0px) scale(1)` },
+        {
+          transform: `translate(${caster.team === "player" ? 80 : -80}px, ${
+            caster.team === "player" ? -40 : 40
+          }px) scale(1.2)`,
+        },
+      ],
+      {
+        duration: 500,
+        fill: "forwards",
+        easing: "ease-out",
+      }
+    ).finished;
+
     // 👇 Bounce animation after landing!
-    await disc.animate([
-      { transform: `scale(1.2) translateY(0px)` },
-      { transform: `scale(1.1) translateY(-5px)` },
-      { transform: `scale(1) translateY(0px)` },
-    ], {
-      duration: 300,
-      easing: "ease-in-out",
-    }).finished;
-  
+    await disc.animate(
+      [
+        { transform: `scale(1.2) translateY(0px)` },
+        { transform: `scale(1.1) translateY(-5px)` },
+        { transform: `scale(1) translateY(0px)` },
+      ],
+      {
+        duration: 300,
+        easing: "ease-in-out",
+      }
+    ).finished;
+
     // Now remove disc
     disc.remove();
     onComplete();
-  }
-  
+  },
 };

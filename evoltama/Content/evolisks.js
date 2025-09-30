@@ -114,8 +114,7 @@ window.Evolisks = {
   },
   ep004: {
     name: "Ghobun",
-    description:
-      "A friendly spirit from the shadow realm.",
+    description: "A friendly spirit from the shadow realm.",
     type: EvoliskTypes.shadow,
     src: "./images/characters/evolisks/GhobunBattleTamed.png",
     mutatedSrc: "./images/characters/evolisks/GloomareBattleTamed.png",

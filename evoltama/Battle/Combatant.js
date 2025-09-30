@@ -9,14 +9,13 @@ class Combatant {
     });
     this.level = config.level || 1;
 
-      // Apply scaling to maxHp before setting hp
-      const baseHp = config.maxHp || 100;
-      this.maxHp = Math.floor(baseHp + (this.level - 1) * 5);
-      this.hp = typeof config.hp === "undefined" ? this.maxHp : config.hp;
+    // Apply scaling to maxHp before setting hp
+    const baseHp = config.maxHp || 100;
+    this.maxHp = Math.floor(baseHp + (this.level - 1) * 5);
+    this.hp = typeof config.hp === "undefined" ? this.maxHp : config.hp;
     this.battle = battle;
     this.mutatedSrc = config.mutatedSrc || null;
     this.isMutated = false;
-
   }
 
   // Getter for hp percentage
@@ -38,7 +37,6 @@ class Combatant {
   get givesXp() {
     return this.level * 20;
   }
-
 
   get canMutate() {
     return (
@@ -69,18 +67,18 @@ class Combatant {
             </svg>
             <p class="Combatant_status"></p>
         `;
-//  Create the image manually and store it
-this.spriteImg = document.createElement("img");
-this.spriteImg.classList.add("Combatant_character");
-this.spriteImg.alt = this.name;
-this.spriteImg.src = this.src;
+    //  Create the image manually and store it
+    this.spriteImg = document.createElement("img");
+    this.spriteImg.classList.add("Combatant_character");
+    this.spriteImg.alt = this.name;
+    this.spriteImg.src = this.src;
 
-const cropDiv = document.createElement("div");
-cropDiv.classList.add("Combatant_character_crop");
-cropDiv.appendChild(this.spriteImg);
+    const cropDiv = document.createElement("div");
+    cropDiv.classList.add("Combatant_character_crop");
+    cropDiv.appendChild(this.spriteImg);
 
-//  Append cropDiv into this.hudElement
-this.hudElement.appendChild(cropDiv);
+    //  Append cropDiv into this.hudElement
+    this.hudElement.appendChild(cropDiv);
 
     // Draw the evolisk element
     this.evoliskElement = document.createElement("img");
@@ -103,23 +101,23 @@ this.hudElement.appendChild(cropDiv);
     Object.keys(changes).forEach((key) => {
       this[key] = changes[key];
     });
-  
+
     // Update active flag to show correct evolisk & hud
     this.hudElement.setAttribute("data-active", this.isActive);
     this.evoliskElement.setAttribute("data-active", this.isActive);
-  
+
     // Update sprite image if src changed
     if (this.spriteImg && this.src) {
       this.spriteImg.src = this.src + `?v=${Date.now()}`; // force reload to bust cache
     }
-  
+
     // Update hp & xp percent fills
     this.hpFills.forEach((rect) => (rect.style.width = `${this.hpPercent}%`));
     this.xpFills.forEach((rect) => (rect.style.width = `${this.xpPercent}%`));
-  
+
     // Update level on screen
     this.hudElement.querySelector(".Combatant_level").innerText = this.level;
-  
+
     // Update status
     const statusElement = this.hudElement.querySelector(".Combatant_status");
     if (this.status) {
@@ -130,20 +128,21 @@ this.hudElement.appendChild(cropDiv);
       statusElement.style.display = "none";
     }
   }
-  
 
   getReplacedEvents(originalEvents) {
     if (
       this.status?.type === "dazed" &&
       utils.randomFromArray([true, false, false])
     ) {
-      return [{
-        type: "textMessage",
-        text: `${this.name} is dazed!`,
-        caster: this,
-      }];
+      return [
+        {
+          type: "textMessage",
+          text: `${this.name} is dazed!`,
+          caster: this,
+        },
+      ];
     }
-  
+
     return originalEvents;
   }
 
@@ -174,8 +173,6 @@ this.hudElement.appendChild(cropDiv);
     return null;
   }
 
-
-
   mutate() {
     if (!this.canMutate) {
       console.warn(`${this.name} cannot mutate.`, {
@@ -184,21 +181,20 @@ this.hudElement.appendChild(cropDiv);
       });
       return;
     }
-  
+
     this.src = this.mutatedSrc;
     this.isMutated = true;
     this.name += " (Mutated)";
-  
+
     // Persist mutation to playerState if it exists
     const evoliskData = window.playerState?.evolisks?.[this.id];
     if (evoliskData) {
       evoliskData.isMutated = true;
       evoliskData.src = this.mutatedSrc;
     }
-  
+
     this.update(); // force UI refresh
   }
-  
 
   // Calls class functions
   init(container) {

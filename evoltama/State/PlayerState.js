@@ -4,9 +4,7 @@
 
 class PlayerState {
   constructor() {
-    this.evolisks = {
-      
-    };
+    this.evolisks = {};
     this.lineup = [];
     this.items = [
       { actionId: "item_recoverHp", instanceId: "item1" },

@@ -66,14 +66,14 @@ window.Enemies = {
         maxHp: 60,
         level: 4,
         isMutated: true,
-        mutatedSrc: "./images/characters/evolisks/GloomareBattleEnemy.png"
+        mutatedSrc: "./images/characters/evolisks/GloomareBattleEnemy.png",
       },
       c: {
         evoliskId: "ee008",
         maxHp: 60,
         level: 4,
         isMutated: true,
-        mutatedSrc: "./images/characters/evolisks/KingStratusBattleEnemy.png"
+        mutatedSrc: "./images/characters/evolisks/KingStratusBattleEnemy.png",
       },
       c: {
         evoliskId: "ee001",

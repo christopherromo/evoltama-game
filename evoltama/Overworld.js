@@ -141,8 +141,7 @@ class Overworld {
         y: this.progress.startingHeroY,
         direction: this.progress.startingHeroDirection,
       };
-    }
-    else {
+    } else {
       window.playerState.isNewGame = true;
     }
 
@@ -165,42 +164,42 @@ class Overworld {
     this.startGameLoop();
 
     // cutscenes to play immediately
-    if(window.playerState.isNewGame) {
-    this.map.startCutscene([
-      {
-        type: "textMessage",
-        text: "Welcome to the wonderful world of Evoltama!",
-      },
-      {
-        type: "textMessage",
-        text: "Start by using the arrow keys to explore the forest.",
-      },
-      {
-        type: "textMessage",
-        text: "I think Elder Beetle is looking for you! He should be in the main village, to the right and up!",
-      },
-      {
-        type: "textMessage",
-        text: "You can speak to Elder Beetle by pressing Enter when you face him.",
-      },
-      {
-        type: "textMessage",
-        text: "If you ever need to take a break, just hit Escape and save your progress in the Pause Menu!",
-      },
-      {
-        type: "textMessage",
-        text: "Additionally, you can move your Evolisk party around in the future through the Pause Menu!",
-      },
-    ])
-  };
+    if (window.playerState.isNewGame) {
+      this.map.startCutscene([
+        {
+          type: "textMessage",
+          text: "Welcome to the wonderful world of Evoltama!",
+        },
+        {
+          type: "textMessage",
+          text: "Start by using the arrow keys to explore the forest.",
+        },
+        {
+          type: "textMessage",
+          text: "I think Elder Beetle is looking for you! He should be in the main village, to the right and up!",
+        },
+        {
+          type: "textMessage",
+          text: "You can speak to Elder Beetle by pressing Enter when you face him.",
+        },
+        {
+          type: "textMessage",
+          text: "If you ever need to take a break, just hit Escape and save your progress in the Pause Menu!",
+        },
+        {
+          type: "textMessage",
+          text: "Additionally, you can move your Evolisk party around in the future through the Pause Menu!",
+        },
+      ]);
+    }
 
-    if(!window.playerState.isNewGame) {
+    if (!window.playerState.isNewGame) {
       this.map.startCutscene([
         {
           type: "textMessage",
           text: "Welcome Back! Good luck out there!",
         },
-      ])
-    };
+      ]);
+    }
   }
 }

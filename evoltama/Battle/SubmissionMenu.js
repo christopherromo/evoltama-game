@@ -122,37 +122,40 @@ class SubmissionMenu {
 
   menuSubmit(action, instanceId = null) {
     this.keyboardMenu?.end();
-  
+
     const target = action.targetType === "friendly" ? this.caster : this.enemy;
-  
+
     this.onComplete({
       action,
       target,
       instanceId,
     });
   }
-  
+
   decide() {
     const actionKeys = this.caster.actions || [];
-    const availableActions = actionKeys.map(key => window.Actions[key]).filter(Boolean);
-  
-    const randomAction = availableActions[Math.floor(Math.random() * availableActions.length)];
-  
+    const availableActions = actionKeys
+      .map((key) => window.Actions[key])
+      .filter(Boolean);
+
+    const randomAction =
+      availableActions[Math.floor(Math.random() * availableActions.length)];
+
     if (!randomAction) {
       console.error("Enemy has no valid actions.");
       this.onComplete(null);
       return;
     }
-  
-    const target = randomAction.targetType === "friendly" ? this.caster : this.enemy;
-  
+
+    const target =
+      randomAction.targetType === "friendly" ? this.caster : this.enemy;
+
     this.onComplete({
       action: randomAction,
       target,
       caster: this.caster,
     });
   }
-  
 
   showMenu(container) {
     this.keyboardMenu = new KeyboardMenu();

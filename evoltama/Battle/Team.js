@@ -9,7 +9,6 @@ class Team {
     this.combatants = [];
   }
 
-
   createElement() {
     this.element = document.createElement("div");
     this.element.classList.add("Team");
@@ -38,7 +37,7 @@ class Team {
   }
 
   getFirstAlive() {
-    return this.combatants.find(c => c.hp > 0)?.id;
+    return this.combatants.find((c) => c.hp > 0)?.id;
   }
 
   update() {
@@ -54,6 +53,4 @@ class Team {
     this.update();
     container.appendChild(this.element);
   }
-
-
 }

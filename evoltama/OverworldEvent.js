@@ -77,7 +77,7 @@ class OverworldEvent {
     delete this.map.walls[coord];
     resolve();
   }
-  
+
   // Change the current map
   changeMap(resolve) {
     // Deactivate Old Objects
@@ -100,15 +100,13 @@ class OverworldEvent {
 
   // Puts the game into battle mode
   battle(resolve) {
-   
-
     const battle = new Battle({
       enemy: Enemies[this.event.enemyId],
       map: this.map,
       onComplete: (didWin) => {
         resolve(didWin ? "WON_BATTLE" : "LOST_BATTLE");
       },
-      battleBackgroundSrc: this.map.battleBackgroundSrc
+      battleBackgroundSrc: this.map.battleBackgroundSrc,
     });
 
     battle.init(document.querySelector(".game-container"));
@@ -146,7 +144,16 @@ class OverworldEvent {
   //Puts the game into a wild battle
   async wildBattle(resolve) {
     // Pick a random wild Evolisk ID
-    const wildId = utils.randomFromArray(["ee001", "ee002", "ee003", "ee004", "ee005", "ee006", "ee007", "ee008"]);
+    const wildId = utils.randomFromArray([
+      "ee001",
+      "ee002",
+      "ee003",
+      "ee004",
+      "ee005",
+      "ee006",
+      "ee007",
+      "ee008",
+    ]);
 
     const battle = new Battle({
       map: this.map,
@@ -162,24 +169,22 @@ class OverworldEvent {
             xp: 0,
             maxXp: 100,
             status: null,
-          }
-        }
+          },
+        },
       },
       isWildEncounter: true,
-      battleBackgroundSrc: this.map.battleBackgroundSrc, 
+      battleBackgroundSrc: this.map.battleBackgroundSrc,
       onComplete: (didWin) => {
         if (didWin) {
           resolve("WON_WILD_BATTLE");
         } else {
           resolve("LOST_WILD_BATTLE");
         }
-      }
+      },
     });
-  
+
     battle.init(document.querySelector(".game-container"));
   }
-  
-  
 
   // Initiates the desired event
   init() {

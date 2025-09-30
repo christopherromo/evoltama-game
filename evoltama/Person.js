@@ -24,7 +24,6 @@ class Person extends GameObject {
   mount(map) {
     this.map = map;
     super.mount(map); // <--- call the parent GameObject's mount function too
-
   }
 
   // Updates the character's state
@@ -110,7 +109,6 @@ class Person extends GameObject {
 
         this.checkForWildEncounter();
       }
-      
     }
   }
 
@@ -123,19 +121,20 @@ class Person extends GameObject {
     this.sprite.setAnimation("idle-" + this.direction);
   }
 
-  
-
   checkForWildEncounter() {
     const hero = this.map.gameObjects["hero"];
     const heroTileX = Math.floor(hero.x / 16);
     const heroTileY = Math.floor(hero.y / 16);
-  
-    if (!this.map.wildEncounterAreas || this.map.wildEncounterAreas.length === 0) {
+
+    if (
+      !this.map.wildEncounterAreas ||
+      this.map.wildEncounterAreas.length === 0
+    ) {
       return;
     }
-  
+
     // First: Check if hero is in any excluded area
-    const isExcluded = this.map.wildEncounterAreas.some(area => {
+    const isExcluded = this.map.wildEncounterAreas.some((area) => {
       if (!area.exclude) return false;
       return (
         area.xMin <= heroTileX &&
@@ -144,13 +143,13 @@ class Person extends GameObject {
         heroTileY <= area.yMax
       );
     });
-  
+
     if (isExcluded) {
       return; // Exit early if excluded
     }
-  
+
     // Then: Check if hero is inside any allowed wild encounter area
-    const isInWildEncounterArea = this.map.wildEncounterAreas.some(area => {
+    const isInWildEncounterArea = this.map.wildEncounterAreas.some((area) => {
       if (area.exclude) return false;
       return (
         area.xMin <= heroTileX &&
@@ -159,10 +158,9 @@ class Person extends GameObject {
         heroTileY <= area.yMax
       );
     });
-  
+
     if (isInWildEncounterArea) {
-  
-      // Set encounter chance 
+      // Set encounter chance
       const encounterChance = 0.1; // 5% chance
       if (Math.random() < encounterChance) {
         utils.emitEvent("WildEncounter");
@@ -170,16 +168,4 @@ class Person extends GameObject {
     } else {
     }
   }
-  
-  
-  
-  
-  
-  
-  
-
-
-  
 }
-
-
