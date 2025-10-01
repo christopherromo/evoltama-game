@@ -350,6 +350,23 @@ window.OverworldMaps = {
         src: "./images/characters/people/Beetle_Guard.png",
         talking: [
           {
+            required: ["MUSHROOM_COMPLETE"],
+            events: [
+              {
+                type: "textMessage",
+                text: "Right this way, Kairo!",
+                faceHero: "beetle_guard_1",
+              },
+              {
+                type: "removeWall",
+                x: 52,
+                y: 55,
+              },
+              { who: "beetle_guard_1", type: "walk", direction: "left" },
+              { who: "beetle_guard_1", type: "walk", direction: "down" },
+            ],
+          },
+          {
             required: ["FOREST_COMPLETE"],
             events: [
               {
@@ -1831,7 +1848,7 @@ window.OverworldMaps = {
               },
               {
                 type: "textMessage",
-                text: "You can find Froggert's hideout west of the village.",
+                text: "You can find Froggert's hideout east of the village.",
                 faceHero: "npcC",
               },
               {
