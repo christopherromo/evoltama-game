@@ -23,7 +23,7 @@ class Person extends GameObject {
 
   mount(map) {
     this.map = map;
-    super.mount(map); // <--- call the parent GameObject's mount function too
+    super.mount(map); // <--- Call the parent GameObject's mount function too
   }
 
   // Updates the character's state

@@ -68,7 +68,7 @@ window.Enemies = {
         isMutated: true,
         mutatedSrc: "./images/characters/evolisks/GloomareBattleEnemy.png",
       },
-      c: {
+      b: {
         evoliskId: "ee008",
         maxHp: 60,
         level: 4,

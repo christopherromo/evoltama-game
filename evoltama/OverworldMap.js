@@ -7,8 +7,8 @@ class OverworldMap {
     // Set up the map and objects
     this.overworld = null;
     this.gameObjects = {}; // Live Objects are in here
-    this.configObjects = config.configObjects; //Configuration content
-    this.wildEncounterAreas = config.wildEncounterAreas || []; //Encounter Tiles
+    this.configObjects = config.configObjects; // Configuration content
+    this.wildEncounterAreas = config.wildEncounterAreas || []; // Encounter Tiles
     this.healingSpot = config.healingSpot;
 
     this.cutsceneSpaces = config.cutsceneSpaces || {};
@@ -231,6 +231,16 @@ window.OverworldMaps = {
             ],
           },
           {
+            required: ["FOREST_COMPLETE"],
+            events: [
+              {
+                type: "textMessage",
+                text: "Head to the land of mushrooms!",
+                faceHero: "elder_beetle",
+              },
+            ],
+          },
+          {
             required: ["FIRST_EVOLISK_STONE"],
             events: [
               {
@@ -257,7 +267,7 @@ window.OverworldMaps = {
               },
               {
                 type: "textMessage",
-                text: "You must build strong bonds with your evolisks.",
+                text: "You must build strong bonds with your Evolisks.",
                 faceHero: "elder_beetle",
               },
               {
@@ -286,12 +296,12 @@ window.OverworldMaps = {
               },
               {
                 type: "textMessage",
-                text: "One of our townspeople has been corrupted and gone mad. He has locked himself in the old observatory.",
+                text: "One of our townspeople has been corrupted and gone mad. She has locked herself in the old observatory.",
                 faceHero: "elder_beetle",
               },
               {
                 type: "textMessage",
-                text: "I fear that unless someone is able to stop him, he is going to destory us and all the evolisks!",
+                text: "I fear that unless someone is able to stop her, she is going to destroy us and all the Evolisks!",
                 faceHero: "elder_beetle",
               },
               {
@@ -469,24 +479,24 @@ window.OverworldMaps = {
     },
 
     walls: {
-      // rocks
+      // Rocks
       [utils.asGridCoord(24, 33)]: true,
       [utils.asGridCoord(25, 33)]: true,
       [utils.asGridCoord(22, 37)]: true,
 
-      // signs
+      // Signs
       [utils.asGridCoord(26, 40)]: true,
       [utils.asGridCoord(51, 44)]: true,
       [utils.asGridCoord(58, 40)]: true,
       [utils.asGridCoord(45, 21)]: true,
 
-      // trees
+      // Trees
       [utils.asGridCoord(37, 25)]: true,
       [utils.asGridCoord(38, 25)]: true,
       [utils.asGridCoord(42, 27)]: true,
       [utils.asGridCoord(43, 27)]: true,
 
-      // house 1
+      // House 1
       [utils.asGridCoord(21, 27)]: true,
       [utils.asGridCoord(21, 26)]: true,
       [utils.asGridCoord(21, 25)]: true,
@@ -502,7 +512,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(23, 24)]: true,
       [utils.asGridCoord(24, 24)]: true,
 
-      // house 2
+      // House 2
       [utils.asGridCoord(39, 37)]: true,
       [utils.asGridCoord(40, 37)]: true,
       [utils.asGridCoord(41, 37)]: true,
@@ -521,7 +531,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(43, 35)]: true,
       [utils.asGridCoord(43, 36)]: true,
 
-      // house 3
+      // House 3
       [utils.asGridCoord(51, 37)]: true,
       [utils.asGridCoord(52, 37)]: true,
       [utils.asGridCoord(53, 37)]: true,
@@ -540,7 +550,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(55, 35)]: true,
       [utils.asGridCoord(55, 36)]: true,
 
-      // house 4
+      // House 4
       [utils.asGridCoord(51, 25)]: true,
       [utils.asGridCoord(52, 25)]: true,
       [utils.asGridCoord(53, 25)]: true,
@@ -559,8 +569,9 @@ window.OverworldMaps = {
       [utils.asGridCoord(55, 24)]: true,
       [utils.asGridCoord(55, 23)]: true,
 
-      // first area
-      // left wall
+      // First Area
+
+      // Left Wall
       [utils.asGridCoord(16, 19)]: true,
       [utils.asGridCoord(16, 20)]: true,
       [utils.asGridCoord(16, 21)]: true,
@@ -590,7 +601,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(16, 45)]: true,
       [utils.asGridCoord(16, 46)]: true,
 
-      // upper wall
+      // Upper Wall
       [utils.asGridCoord(17, 18)]: true,
       [utils.asGridCoord(18, 18)]: true,
       [utils.asGridCoord(19, 18)]: true,
@@ -605,7 +616,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(28, 18)]: true,
       [utils.asGridCoord(29, 18)]: true,
 
-      // right wall
+      // Right Wall
       [utils.asGridCoord(30, 19)]: true,
       [utils.asGridCoord(30, 20)]: true,
       [utils.asGridCoord(30, 21)]: true,
@@ -634,7 +645,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(32, 45)]: true,
       [utils.asGridCoord(30, 46)]: true,
 
-      // bottom wall
+      // Bottom Wall
       [utils.asGridCoord(17, 47)]: true,
       [utils.asGridCoord(18, 47)]: true,
       [utils.asGridCoord(19, 47)]: true,
@@ -648,9 +659,10 @@ window.OverworldMaps = {
       [utils.asGridCoord(27, 47)]: true,
       [utils.asGridCoord(28, 47)]: true,
       [utils.asGridCoord(29, 47)]: true,
-      // main area
+      
+      // Main Area
 
-      // left wall
+      // Left Wall
       [utils.asGridCoord(32, 19)]: true,
       [utils.asGridCoord(32, 20)]: true,
       [utils.asGridCoord(32, 21)]: true,
@@ -673,7 +685,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(32, 38)]: true,
       [utils.asGridCoord(32, 46)]: true,
 
-      // upper wall
+      // Upper Wall
       [utils.asGridCoord(33, 18)]: true,
       [utils.asGridCoord(34, 18)]: true,
       [utils.asGridCoord(35, 18)]: true,
@@ -702,7 +714,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(60, 18)]: true,
       [utils.asGridCoord(61, 18)]: true,
 
-      // right wall
+      // Right Wall
       [utils.asGridCoord(62, 19)]: true,
       [utils.asGridCoord(62, 20)]: true,
       [utils.asGridCoord(62, 21)]: true,
@@ -731,7 +743,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(64, 45)]: true,
       [utils.asGridCoord(62, 46)]: true,
 
-      // lower wall
+      // Lower Wall
       [utils.asGridCoord(33, 47)]: true,
       [utils.asGridCoord(34, 47)]: true,
       [utils.asGridCoord(35, 47)]: true,
@@ -760,8 +772,9 @@ window.OverworldMaps = {
       [utils.asGridCoord(60, 47)]: true,
       [utils.asGridCoord(61, 47)]: true,
 
-      // lower cube
-      // hall
+      // Lower Cube
+
+      // Hall
       [utils.asGridCoord(51, 48)]: true,
       [utils.asGridCoord(51, 49)]: true,
       [utils.asGridCoord(51, 50)]: true,
@@ -776,7 +789,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(56, 51)]: true,
       [utils.asGridCoord(57, 51)]: true,
 
-      // left side
+      // Left Side
       [utils.asGridCoord(48, 52)]: true,
       [utils.asGridCoord(48, 53)]: true,
       [utils.asGridCoord(48, 54)]: true,
@@ -786,7 +799,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(48, 58)]: true,
       [utils.asGridCoord(48, 59)]: true,
 
-      // right side
+      // Right Side
       [utils.asGridCoord(58, 52)]: true,
       [utils.asGridCoord(58, 53)]: true,
       [utils.asGridCoord(58, 54)]: true,
@@ -796,15 +809,16 @@ window.OverworldMaps = {
       [utils.asGridCoord(58, 58)]: true,
       [utils.asGridCoord(58, 59)]: true,
 
-      // back wall
+      // Back Wall
       [utils.asGridCoord(53, 60)]: true,
 
-      // right cube
-      // left wall
+      // Right Cube
+
+      // Left Wall
       [utils.asGridCoord(64, 38)]: true,
       [utils.asGridCoord(64, 46)]: true,
 
-      // bottom wall
+      // Bottom Wall
       [utils.asGridCoord(65, 47)]: true,
       [utils.asGridCoord(66, 47)]: true,
       [utils.asGridCoord(67, 47)]: true,
@@ -815,7 +829,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(72, 47)]: true,
       [utils.asGridCoord(73, 47)]: true,
 
-      // top wall
+      // Top Wall
       [utils.asGridCoord(65, 37)]: true,
       [utils.asGridCoord(66, 37)]: true,
       [utils.asGridCoord(67, 37)]: true,
@@ -826,11 +840,12 @@ window.OverworldMaps = {
       [utils.asGridCoord(72, 37)]: true,
       [utils.asGridCoord(73, 37)]: true,
 
-      // back wall
+      // Back Wall
       [utils.asGridCoord(75, 42)]: true,
 
-      // upper cube
-      // back wall
+      // Upper Cube
+
+      // Back Wall
       [utils.asGridCoord(45, 17)]: true,
       [utils.asGridCoord(45, 16)]: true,
       [utils.asGridCoord(45, 15)]: true,
@@ -844,7 +859,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(50, 14)]: true,
       [utils.asGridCoord(51, 14)]: true,
 
-      // right wall
+      // Right Wall
       [utils.asGridCoord(52, 13)]: true,
       [utils.asGridCoord(52, 12)]: true,
       [utils.asGridCoord(52, 11)]: true,
@@ -853,7 +868,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(52, 8)]: true,
       [utils.asGridCoord(52, 7)]: true,
 
-      // left wall
+      // Left Wall
       [utils.asGridCoord(42, 13)]: true,
       [utils.asGridCoord(42, 12)]: true,
       [utils.asGridCoord(42, 11)]: true,
@@ -862,7 +877,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(42, 8)]: true,
       [utils.asGridCoord(42, 7)]: true,
 
-      // top wall
+      // Top Wall
       [utils.asGridCoord(43, 6)]: true,
       [utils.asGridCoord(44, 6)]: true,
       [utils.asGridCoord(45, 6)]: true,
@@ -875,7 +890,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(50, 6)]: true,
       [utils.asGridCoord(51, 6)]: true,
 
-      // fences
+      // Fences
       [utils.asGridCoord(51, 10)]: true,
       [utils.asGridCoord(50, 10)]: true,
       [utils.asGridCoord(49, 10)]: true,
@@ -904,7 +919,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(69, 46)]: true,
     },
     cutsceneSpaces: {
-      // houses
+      // Houses
       [utils.asGridCoord(23, 28)]: [
         {
           events: [
@@ -1249,10 +1264,10 @@ window.OverworldMaps = {
       },
     },
     walls: {
-      // tv
+      // TV
       [utils.asGridCoord(7, 9)]: true,
 
-      // table
+      // Table
       [utils.asGridCoord(4, 8)]: true,
       [utils.asGridCoord(4, 7)]: true,
       [utils.asGridCoord(3, 8)]: true,
@@ -1260,12 +1275,12 @@ window.OverworldMaps = {
       [utils.asGridCoord(2, 8)]: true,
       [utils.asGridCoord(2, 7)]: true,
 
-      // couch
+      // Couch
       [utils.asGridCoord(6, 7)]: true,
       [utils.asGridCoord(7, 7)]: true,
       [utils.asGridCoord(8, 7)]: true,
 
-      // kitchen
+      // Kitchen
       [utils.asGridCoord(2, 5)]: true,
       [utils.asGridCoord(2, 4)]: true,
       [utils.asGridCoord(2, 3)]: true,
@@ -1277,13 +1292,13 @@ window.OverworldMaps = {
       [utils.asGridCoord(5, 5)]: true,
       [utils.asGridCoord(5, 4)]: true,
 
-      // bed
+      // Bed
       [utils.asGridCoord(6, 3)]: true,
       [utils.asGridCoord(7, 3)]: true,
       [utils.asGridCoord(7, 4)]: true,
       [utils.asGridCoord(8, 3)]: true,
 
-      // bottom wall
+      // Bottom Wall
       [utils.asGridCoord(2, 10)]: true,
       [utils.asGridCoord(3, 10)]: true,
       [utils.asGridCoord(4, 10)]: true,
@@ -1292,7 +1307,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(7, 10)]: true,
       [utils.asGridCoord(8, 10)]: true,
 
-      // right wall
+      // Right Wall
       [utils.asGridCoord(9, 9)]: true,
       [utils.asGridCoord(9, 8)]: true,
       [utils.asGridCoord(9, 7)]: true,
@@ -1301,7 +1316,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(9, 4)]: true,
       [utils.asGridCoord(9, 3)]: true,
 
-      // back wall
+      // Back Wall
       [utils.asGridCoord(8, 2)]: true,
       [utils.asGridCoord(7, 2)]: true,
       [utils.asGridCoord(6, 2)]: true,
@@ -1310,7 +1325,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(3, 2)]: true,
       [utils.asGridCoord(2, 2)]: true,
 
-      // left wall
+      // Left Wall
       [utils.asGridCoord(1, 9)]: true,
       [utils.asGridCoord(1, 8)]: true,
       [utils.asGridCoord(1, 7)]: true,
@@ -1357,7 +1372,7 @@ window.OverworldMaps = {
       },
     },
     walls: {
-      // table
+      // Table
       [utils.asGridCoord(4, 8)]: true,
       [utils.asGridCoord(4, 7)]: true,
       [utils.asGridCoord(3, 8)]: true,
@@ -1365,12 +1380,12 @@ window.OverworldMaps = {
       [utils.asGridCoord(2, 8)]: true,
       [utils.asGridCoord(2, 7)]: true,
 
-      // couch
+      // Couch
       [utils.asGridCoord(6, 7)]: true,
       [utils.asGridCoord(7, 7)]: true,
       [utils.asGridCoord(8, 7)]: true,
 
-      // kitchen
+      // Kitchen
       [utils.asGridCoord(2, 5)]: true,
       [utils.asGridCoord(2, 4)]: true,
       [utils.asGridCoord(2, 3)]: true,
@@ -1382,13 +1397,13 @@ window.OverworldMaps = {
       [utils.asGridCoord(5, 5)]: true,
       [utils.asGridCoord(5, 4)]: true,
 
-      // bed
+      // Bed
       [utils.asGridCoord(6, 3)]: true,
       [utils.asGridCoord(7, 3)]: true,
       [utils.asGridCoord(7, 4)]: true,
       [utils.asGridCoord(8, 3)]: true,
 
-      // bottom wall
+      // Bottom Wall
       [utils.asGridCoord(2, 10)]: true,
       [utils.asGridCoord(3, 10)]: true,
       [utils.asGridCoord(4, 10)]: true,
@@ -1397,7 +1412,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(7, 10)]: true,
       [utils.asGridCoord(8, 10)]: true,
 
-      // right wall
+      // Right Wall
       [utils.asGridCoord(9, 9)]: true,
       [utils.asGridCoord(9, 8)]: true,
       [utils.asGridCoord(9, 7)]: true,
@@ -1406,7 +1421,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(9, 4)]: true,
       [utils.asGridCoord(9, 3)]: true,
 
-      // back wall
+      // Back Wall
       [utils.asGridCoord(8, 2)]: true,
       [utils.asGridCoord(7, 2)]: true,
       [utils.asGridCoord(6, 2)]: true,
@@ -1415,7 +1430,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(3, 2)]: true,
       [utils.asGridCoord(2, 2)]: true,
 
-      // left wall
+      // Left Wall
       [utils.asGridCoord(1, 9)]: true,
       [utils.asGridCoord(1, 8)]: true,
       [utils.asGridCoord(1, 7)]: true,
@@ -1473,10 +1488,10 @@ window.OverworldMaps = {
       },
     },
     walls: {
-      // tv
+      // TV
       [utils.asGridCoord(3, 9)]: true,
 
-      // table
+      // Table
       [utils.asGridCoord(6, 8)]: true,
       [utils.asGridCoord(6, 7)]: true,
       [utils.asGridCoord(7, 8)]: true,
@@ -1484,12 +1499,12 @@ window.OverworldMaps = {
       [utils.asGridCoord(8, 8)]: true,
       [utils.asGridCoord(8, 7)]: true,
 
-      // couch
+      // Couch
       [utils.asGridCoord(4, 7)]: true,
       [utils.asGridCoord(3, 7)]: true,
       [utils.asGridCoord(2, 7)]: true,
 
-      // kitchen
+      // Kitchen
       [utils.asGridCoord(8, 5)]: true,
       [utils.asGridCoord(8, 4)]: true,
       [utils.asGridCoord(8, 3)]: true,
@@ -1501,13 +1516,13 @@ window.OverworldMaps = {
       [utils.asGridCoord(5, 5)]: true,
       [utils.asGridCoord(5, 4)]: true,
 
-      // bed
+      // Bed
       [utils.asGridCoord(4, 3)]: true,
       [utils.asGridCoord(3, 3)]: true,
       [utils.asGridCoord(3, 4)]: true,
       [utils.asGridCoord(2, 3)]: true,
 
-      // bottom wall
+      // Bottom Wall
       [utils.asGridCoord(2, 10)]: true,
       [utils.asGridCoord(3, 10)]: true,
       [utils.asGridCoord(4, 10)]: true,
@@ -1516,7 +1531,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(7, 10)]: true,
       [utils.asGridCoord(8, 10)]: true,
 
-      // right wall
+      // Right Wall
       [utils.asGridCoord(9, 9)]: true,
       [utils.asGridCoord(9, 8)]: true,
       [utils.asGridCoord(9, 7)]: true,
@@ -1525,7 +1540,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(9, 4)]: true,
       [utils.asGridCoord(9, 3)]: true,
 
-      // back wall
+      // Back Wall
       [utils.asGridCoord(8, 2)]: true,
       [utils.asGridCoord(7, 2)]: true,
       [utils.asGridCoord(6, 2)]: true,
@@ -1534,7 +1549,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(3, 2)]: true,
       [utils.asGridCoord(2, 2)]: true,
 
-      // left wall
+      // Left Wall
       [utils.asGridCoord(1, 9)]: true,
       [utils.asGridCoord(1, 8)]: true,
       [utils.asGridCoord(1, 7)]: true,
@@ -1592,10 +1607,10 @@ window.OverworldMaps = {
       },
     },
     walls: {
-      // tv
+      // TV
       [utils.asGridCoord(3, 9)]: true,
 
-      // table
+      // Table
       [utils.asGridCoord(6, 8)]: true,
       [utils.asGridCoord(6, 7)]: true,
       [utils.asGridCoord(7, 8)]: true,
@@ -1603,12 +1618,12 @@ window.OverworldMaps = {
       [utils.asGridCoord(8, 8)]: true,
       [utils.asGridCoord(8, 7)]: true,
 
-      // couch
+      // Couch
       [utils.asGridCoord(4, 7)]: true,
       [utils.asGridCoord(3, 7)]: true,
       [utils.asGridCoord(2, 7)]: true,
 
-      // kitchen
+      // Kitchen
       [utils.asGridCoord(8, 5)]: true,
       [utils.asGridCoord(8, 4)]: true,
       [utils.asGridCoord(8, 3)]: true,
@@ -1620,13 +1635,13 @@ window.OverworldMaps = {
       [utils.asGridCoord(5, 5)]: true,
       [utils.asGridCoord(5, 4)]: true,
 
-      // bed
+      // Bed
       [utils.asGridCoord(4, 3)]: true,
       [utils.asGridCoord(3, 3)]: true,
       [utils.asGridCoord(3, 4)]: true,
       [utils.asGridCoord(2, 3)]: true,
 
-      // bottom wall
+      // Bottom Wall
       [utils.asGridCoord(2, 10)]: true,
       [utils.asGridCoord(3, 10)]: true,
       [utils.asGridCoord(4, 10)]: true,
@@ -1635,7 +1650,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(7, 10)]: true,
       [utils.asGridCoord(8, 10)]: true,
 
-      // right wall
+      // Right Wall
       [utils.asGridCoord(9, 9)]: true,
       [utils.asGridCoord(9, 8)]: true,
       [utils.asGridCoord(9, 7)]: true,
@@ -1644,7 +1659,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(9, 4)]: true,
       [utils.asGridCoord(9, 3)]: true,
 
-      // back wall
+      // Back Wall
       [utils.asGridCoord(8, 2)]: true,
       [utils.asGridCoord(7, 2)]: true,
       [utils.asGridCoord(6, 2)]: true,
@@ -1653,7 +1668,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(3, 2)]: true,
       [utils.asGridCoord(2, 2)]: true,
 
-      // left wall
+      // Left Wall
       [utils.asGridCoord(1, 9)]: true,
       [utils.asGridCoord(1, 8)]: true,
       [utils.asGridCoord(1, 7)]: true,
@@ -1686,9 +1701,9 @@ window.OverworldMaps = {
     battleBackgroundSrc: "./images/maps/MushroomBattleMap.png",
     gameObjects: {},
 
-    //Configure Objects in Map
+    // Configure Objects in Map
     configObjects: {
-      //Create Hero & NPCs
+      // Create Hero & NPCs
       hero: {
         type: "Person",
         isPlayerControlled: true,
@@ -1705,7 +1720,7 @@ window.OverworldMaps = {
             events: [
               {
                 type: "textMessage",
-                text: "Welcome to the Mushroom Kingdom! There are lots of wild evolisks here, so be careful!",
+                text: "Welcome to the Mushroom Kingdom! There are lots of wild Evolisks here, so be careful!",
                 faceHero: "npcA",
               },
             ],
@@ -1804,9 +1819,9 @@ window.OverworldMaps = {
         ],
       },
     },
-    //Create Walls
+    // Create Walls
     walls: {
-      //Mushrooms
+      // Mushrooms
       [utils.asGridCoord(16, 1)]: true,
 
       [utils.asGridCoord(20, 2)]: true,
@@ -1872,7 +1887,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(22, 20)]: true,
       [utils.asGridCoord(23, 20)]: true,
 
-      //Rocks
+      // Rocks
       [utils.asGridCoord(3, 4)]: true,
       [utils.asGridCoord(3, 4)]: true,
       [utils.asGridCoord(4, 3)]: true,
@@ -1884,7 +1899,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(20, 17)]: true,
       [utils.asGridCoord(20, 18)]: true,
 
-      //Left Wall
+      // Left Wall
       [utils.asGridCoord(0, 0)]: true,
       [utils.asGridCoord(0, 1)]: true,
       [utils.asGridCoord(0, 2)]: true,
@@ -1911,7 +1926,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(0, 23)]: true,
       [utils.asGridCoord(0, 24)]: true,
 
-      //Top Wall
+      // Top Wall
       [utils.asGridCoord(1, 0)]: true,
       [utils.asGridCoord(2, 0)]: true,
       [utils.asGridCoord(3, 0)]: true,
@@ -1938,7 +1953,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(24, 0)]: true,
       [utils.asGridCoord(25, 0)]: true,
 
-      //Bottom Wall
+      // Bottom Wall
       [utils.asGridCoord(0, 23)]: true,
       [utils.asGridCoord(1, 23)]: true,
       [utils.asGridCoord(2, 23)]: true,
@@ -1967,7 +1982,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(25, 23)]: true,
       [utils.asGridCoord(26, 23)]: true,
 
-      //Right Wall
+      // Right Wall
       [utils.asGridCoord(25, 0)]: true,
       [utils.asGridCoord(25, 1)]: true,
       [utils.asGridCoord(25, 2)]: true,
@@ -2142,7 +2157,7 @@ window.OverworldMaps = {
               },
               {
                 type: "textMessage",
-                text: "Maybe you could do something about that guy up at the observatory!",
+                text: "Maybe you could do something about that person up at the observatory!",
                 faceHero: "npcC",
               },
               {
@@ -2155,9 +2170,9 @@ window.OverworldMaps = {
         ],
       },
     },
-    //Walls & Objects
+    // Walls & Objects
     walls: {
-      //Left Wall
+      // Left Wall
       [utils.asGridCoord(0, 0)]: true,
       [utils.asGridCoord(0, 1)]: true,
       [utils.asGridCoord(0, 2)]: true,
@@ -2182,7 +2197,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(0, 21)]: true,
       [utils.asGridCoord(0, 22)]: true,
 
-      //Top Wall
+      // Top Wall
       [utils.asGridCoord(1, 0)]: true,
       [utils.asGridCoord(2, 0)]: true,
       [utils.asGridCoord(3, 0)]: true,
@@ -2208,7 +2223,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(23, 0)]: true,
       [utils.asGridCoord(24, 0)]: true,
 
-      //Right Wall
+      // Right Wall
       [utils.asGridCoord(25, 0)]: true,
       [utils.asGridCoord(25, 1)]: true,
       [utils.asGridCoord(25, 2)]: true,
@@ -2233,7 +2248,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(25, 21)]: true,
       [utils.asGridCoord(25, 22)]: true,
 
-      //Bottom Wall
+      // Bottom Wall
       [utils.asGridCoord(1, 23)]: true,
       [utils.asGridCoord(2, 23)]: true,
       [utils.asGridCoord(3, 23)]: true,
@@ -2259,7 +2274,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(23, 23)]: true,
       [utils.asGridCoord(24, 23)]: true,
 
-      //River
+      // River
       [utils.asGridCoord(1, 5)]: true,
       [utils.asGridCoord(2, 5)]: true,
       [utils.asGridCoord(3, 5)]: true,
@@ -2293,12 +2308,12 @@ window.OverworldMaps = {
       [utils.asGridCoord(23, 13)]: true,
       [utils.asGridCoord(24, 13)]: true,
 
-      //Skull
+      // Skull
       [utils.asGridCoord(8, 10)]: true,
       [utils.asGridCoord(8, 11)]: true,
       [utils.asGridCoord(8, 12)]: true,
 
-      //Bushes
+      // Bushes
       [utils.asGridCoord(3, 8)]: true,
       [utils.asGridCoord(4, 11)]: true,
       [utils.asGridCoord(10, 7)]: true,
@@ -2315,7 +2330,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(5, 19)]: true,
       [utils.asGridCoord(5, 20)]: true,
 
-      //Canyon Walls
+      // Canyon Walls
       [utils.asGridCoord(1, 3)]: true,
       [utils.asGridCoord(2, 3)]: true,
       [utils.asGridCoord(3, 3)]: true,
@@ -2347,7 +2362,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(23, 3)]: true,
       [utils.asGridCoord(24, 3)]: true,
 
-      //Rocks
+      // Rocks
       [utils.asGridCoord(2, 11)]: true,
 
       [utils.asGridCoord(10, 9)]: true,
@@ -2364,7 +2379,7 @@ window.OverworldMaps = {
 
       [utils.asGridCoord(6, 16)]: true,
 
-      //Trees
+      // Trees
       [utils.asGridCoord(13, 9)]: true,
 
       [utils.asGridCoord(21, 17)]: true,
@@ -2403,7 +2418,7 @@ window.OverworldMaps = {
     healingSpot: {
       x: 3, // Healing area X-coordinate
       y: 9, // Healing area Y-coordinate
-      message: "You've feel the need to try again for the sake of the world!",
+      message: "You feel the need to try again for the sake of the world!",
       heal: "full", // Healing type ("full" or "partial")
     },
   },
@@ -2422,12 +2437,12 @@ window.OverworldMaps = {
       },
     },
     walls: {
-      // back wall
+      // Back Wall
       [utils.asGridCoord(29, 57)]: true,
       [utils.asGridCoord(28, 57)]: true,
       [utils.asGridCoord(30, 57)]: true,
 
-      // left wall
+      // Left Wall
       [utils.asGridCoord(27, 56)]: true,
       [utils.asGridCoord(27, 55)]: true,
       [utils.asGridCoord(27, 54)]: true,
@@ -2475,7 +2490,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(19, 29)]: true,
       [utils.asGridCoord(19, 28)]: true,
 
-      // back wall
+      // Back Wall
       [utils.asGridCoord(20, 27)]: true,
       [utils.asGridCoord(21, 27)]: true,
       [utils.asGridCoord(22, 27)]: true,
@@ -2496,7 +2511,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(37, 27)]: true,
       [utils.asGridCoord(38, 27)]: true,
 
-      // right wall
+      // Right Wall
       [utils.asGridCoord(39, 28)]: true,
       [utils.asGridCoord(39, 29)]: true,
       [utils.asGridCoord(39, 30)]: true,
@@ -2545,7 +2560,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(31, 56)]: true,
       [utils.asGridCoord(31, 57)]: true,
 
-      // well
+      // Well
       [utils.asGridCoord(25, 45)]: true,
       [utils.asGridCoord(26, 45)]: true,
       [utils.asGridCoord(27, 45)]: true,
@@ -2711,7 +2726,7 @@ window.OverworldMaps = {
       },
     },
     walls: {
-      // back wall
+      // Back Wall
       [utils.asGridCoord(31, 56)]: true,
       [utils.asGridCoord(32, 56)]: true,
       [utils.asGridCoord(33, 56)]: true,
@@ -2726,7 +2741,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(36, 55)]: true,
       [utils.asGridCoord(37, 55)]: true,
 
-      // left wall
+      // Left Wall
       [utils.asGridCoord(26, 54)]: true,
       [utils.asGridCoord(26, 53)]: true,
       [utils.asGridCoord(26, 52)]: true,
@@ -2769,7 +2784,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(24, 23)]: true,
       [utils.asGridCoord(24, 22)]: true,
 
-      // back wall
+      // Back Wall
       [utils.asGridCoord(25, 21)]: true,
       [utils.asGridCoord(26, 21)]: true,
       [utils.asGridCoord(27, 21)]: true,
@@ -2786,7 +2801,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(38, 21)]: true,
       [utils.asGridCoord(39, 21)]: true,
 
-      // right wall
+      // Right Wall
       [utils.asGridCoord(40, 36)]: true,
       [utils.asGridCoord(40, 35)]: true,
       [utils.asGridCoord(40, 34)]: true,
@@ -2829,7 +2844,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(38, 53)]: true,
       [utils.asGridCoord(38, 54)]: true,
 
-      // desk and cones
+      // Desk and Cones
       [utils.asGridCoord(31, 52)]: true,
       [utils.asGridCoord(32, 52)]: true,
       [utils.asGridCoord(33, 52)]: true,
@@ -2840,7 +2855,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(34, 49)]: true,
       [utils.asGridCoord(30, 48)]: true,
 
-      // well
+      // Well
       [utils.asGridCoord(31, 43)]: true,
       [utils.asGridCoord(32, 43)]: true,
       [utils.asGridCoord(33, 43)]: true,
@@ -2852,7 +2867,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(31, 42)]: true,
       [utils.asGridCoord(33, 42)]: true,
 
-      // seats
+      // Seats
       [utils.asGridCoord(27, 25)]: true,
       [utils.asGridCoord(28, 25)]: true,
       [utils.asGridCoord(29, 25)]: true,
@@ -2941,7 +2956,7 @@ window.OverworldMaps = {
     healingSpot: {
       x: 32, // Healing area X-coordinate
       y: 54, // Healing area Y-coordinate
-      message: "You've feel the need to try again for the sake of the world!",
+      message: "You feel the need to try again for the sake of the world!",
       heal: "full", // Healing type ("full" or "partial")
     },
   },
@@ -2984,13 +2999,6 @@ window.OverworldMaps = {
         x: utils.withGrid(8),
         y: utils.withGrid(5),
         src: "./images/characters/people/Froggert_Enemy.png",
-        /* behaviorLoop: [
-          { type: "walk", direction: "left" },
-          { type: "stand", direction: "up", time: 800 },
-          { type: "walk", direction: "up" },
-          { type: "walk", direction: "right" },
-          { type: "walk", direction: "down" },
-        ] */
       },
     },
     walls: {
@@ -3112,6 +3120,7 @@ window.OverworldMaps = {
 
     walls: {
       // Objects
+      
       // Tables
       [utils.asGridCoord(2, 4)]: true,
       [utils.asGridCoord(3, 4)]: true,
@@ -3141,6 +3150,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(2, 9)]: true,
 
       // Walls
+
       // Upper Wall
       [utils.asGridCoord(1, 3)]: true,
       [utils.asGridCoord(2, 3)]: true,

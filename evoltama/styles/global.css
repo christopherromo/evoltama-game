@@ -37,4 +37,5 @@ body {
 .game-container canvas {
   background: #333;
   image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }

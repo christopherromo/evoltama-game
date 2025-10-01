@@ -263,7 +263,7 @@ window.BattleAnimations = {
       }
     ).finished;
 
-    // 👇 Bounce animation after landing!
+    // Bounce animation after landing
     await disc.animate(
       [
         { transform: `scale(1.2) translateY(0px)` },

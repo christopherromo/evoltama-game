@@ -210,7 +210,7 @@ window.Actions = {
     ],
   },
 
-  //Atempt to Capture a Wild Evolisk
+  // Attempt to Capture a Wild Evolisk
   catchDisc: {
     name: "Capture Disc",
     description: "Throw a capture disc to try and catch the wild Evolisk.",

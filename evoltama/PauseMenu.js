@@ -42,7 +42,7 @@ class PauseMenu {
       ];
     }
 
-    // Case 2: Show the options for just one evolisk (by id)
+    // Case 2: Show the options for just one Evolisk (by id)
     const unequipped = Object.keys(playerState.evolisks)
       .filter((id) => {
         return playerState.lineup.indexOf(id) === -1;

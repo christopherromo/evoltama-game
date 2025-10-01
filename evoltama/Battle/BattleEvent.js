@@ -263,7 +263,7 @@ class BattleEvent {
     popup.classList.add("capture-popup");
     popup.innerHTML = `
       <div class="capture-popup-inner">
-        🎉 You caught <strong>${name}</strong>!
+        You caught <strong>${name}</strong>!
       </div>
     `;
 

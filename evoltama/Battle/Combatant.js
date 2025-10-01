@@ -67,7 +67,7 @@ class Combatant {
             </svg>
             <p class="Combatant_status"></p>
         `;
-    //  Create the image manually and store it
+    // Create the image manually and store it
     this.spriteImg = document.createElement("img");
     this.spriteImg.classList.add("Combatant_character");
     this.spriteImg.alt = this.name;
@@ -77,7 +77,7 @@ class Combatant {
     cropDiv.classList.add("Combatant_character_crop");
     cropDiv.appendChild(this.spriteImg);
 
-    //  Append cropDiv into this.hudElement
+    // Append cropDiv into this.hudElement
     this.hudElement.appendChild(cropDiv);
 
     // Draw the evolisk element
@@ -193,7 +193,7 @@ class Combatant {
       evoliskData.src = this.mutatedSrc;
     }
 
-    this.update(); // force UI refresh
+    this.update(); // Force UI refresh
   }
 
   // Calls class functions

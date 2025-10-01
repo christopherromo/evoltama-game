@@ -80,7 +80,7 @@ class OverworldEvent {
 
   // Change the current map
   changeMap(resolve) {
-    // Deactivate Old Objects
+    // Deactivate old objects
     Object.values(this.map.gameObjects).forEach((obj) => {
       obj.isMounted = false;
     });
@@ -141,7 +141,7 @@ class OverworldEvent {
     menu.init(document.querySelector(".game-container"));
   }
 
-  //Puts the game into a wild battle
+  // Puts the game into a wild battle
   async wildBattle(resolve) {
     // Pick a random wild Evolisk ID
     const wildId = utils.randomFromArray([

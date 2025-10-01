@@ -8,9 +8,11 @@
   top: 4px;
   gap: 4px;
 }
+
 .Team[data-team="player"] {
   left: 4px;
 }
+
 .Team[data-team="enemy"] {
   right: 4px;
 }
@@ -19,6 +21,7 @@
 .Team .dead-evolisk {
   display: none;
 }
+
 .Team .active-evolisk-indicator {
   display: none;
 }
@@ -27,6 +30,7 @@
 .Team [data-dead="true"] .dead-evolisk {
   display: block;
 }
+
 .Team [data-active="true"] .active-evolisk-indicator {
   display: block;
 }

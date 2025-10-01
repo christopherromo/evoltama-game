@@ -14,10 +14,10 @@ This project helped me learn the following:
    - Game Design
 
 *Please note that this game's foundation was created by using the following tutorial on YouTube:*
-https://www.youtube.com/playlist?list=PLcjhmZ8oLT0r9dSiIK6RB_PuBWlG1KSq_
-    - All credit belongs to this guide with the exception of our personal additions.
-    - This guide helped us quickly learn JavaScript and Game Development Essentials.
-    - This project's main focus was to build upon this foundation.
+<https://www.youtube.com/playlist?list=PLcjhmZ8oLT0r9dSiIK6RB_PuBWlG1KSq_>
+   - All credit belongs to this guide with the exception of our personal additions.
+   - This guide helped us quickly learn JavaScript and Game Development Essentials.
+   - This project's main focus was to build upon this foundation.
 
 ---
 # Evoltama Game

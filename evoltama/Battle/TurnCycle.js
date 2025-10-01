@@ -7,7 +7,7 @@ class TurnCycle {
     this.onNewEvent = onNewEvent;
     this.onWinner = onWinner;
     this.map = map;
-    this.currentTeam = "player"; // or "enemy"
+    this.currentTeam = "player"; // Or "enemy"
   }
 
   async turn() {
@@ -26,7 +26,7 @@ class TurnCycle {
       enemy,
     });
 
-    // Stop here if we are replacing this evolisk
+    // Stop here if we are replacing this Evolisk
     if (submission.replacement) {
       await this.onNewEvent({
         type: "replace",
