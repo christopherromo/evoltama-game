@@ -272,12 +272,22 @@ window.OverworldMaps = {
               },
               {
                 type: "textMessage",
+                text: "Your party can be rearranged in the Pause Menu.",
+                faceHero: "elder_beetle",
+              },
+              {
+                type: "textMessage",
+                text: "I have given you some capture discs and potions to help you in your journey, use them wisely!",
+                faceHero: "elder_beetle",
+              },
+              {
+                type: "textMessage",
                 text: "To the south of the village is the land of the mushrooms.",
                 faceHero: "elder_beetle",
               },
               {
                 type: "textMessage",
-                text: "I've given you some capture discs and potions to help you in your journey, use them wisely!",
+                text: "Head there first to build your strength!",
                 faceHero: "elder_beetle",
               },
             ],
@@ -306,7 +316,7 @@ window.OverworldMaps = {
               },
               {
                 type: "textMessage",
-                text: "No one is left in the village to help, except you, Kairo. You must help us!",
+                text: "All of our townspeople are afraid, except for you, Kairo. You must help us!",
                 faceHero: "elder_beetle",
               },
               {
@@ -321,7 +331,7 @@ window.OverworldMaps = {
               },
               {
                 type: "textMessage",
-                text: "You must train them well if you want to save us! I will help guide you.",
+                text: "You must train them well if you're going to save us! I will help guide you.",
                 faceHero: "elder_beetle",
               },
               {
@@ -1476,10 +1486,20 @@ window.OverworldMaps = {
         behaviorLoop: [{ type: "stand", direction: "left", time: 1000 }],
         talking: [
           {
+            required: ["GAME_COMPLETE"],
             events: [
               {
                 type: "textMessage",
-                text: "Did you know you could pause the game if you hit escape?",
+                text: "You did it! You saved us!",
+                faceHero: "mr_beetle",
+              },
+            ],
+          },
+          {
+            events: [
+              {
+                type: "textMessage",
+                text: "I am so scared, I am not leaving my house anymore!",
                 faceHero: "mr_beetle",
               },
             ],
@@ -1595,10 +1615,20 @@ window.OverworldMaps = {
         behaviorLoop: [{ type: "stand", direction: "down", time: 1000 }],
         talking: [
           {
+            required: ["GAME_COMPLETE"],
             events: [
               {
                 type: "textMessage",
-                text: "Did you know you can use a potion to heal during battle?",
+                text: "I can go outside again! Thank you!",
+                faceHero: "mr_beetle_2",
+              },
+            ],
+          },
+          {
+            events: [
+              {
+                type: "textMessage",
+                text: "Are you sure you want to go outside?",
                 faceHero: "mr_beetle_2",
               },
             ],
@@ -2137,7 +2167,7 @@ window.OverworldMaps = {
               {
                 type: "textMessage",
                 text: "What are you still doing here? Save us all!",
-                faceHero: "npcB",
+                faceHero: "npcC",
               },
             ],
           },
@@ -2418,7 +2448,7 @@ window.OverworldMaps = {
     healingSpot: {
       x: 3, // Healing area X-coordinate
       y: 9, // Healing area Y-coordinate
-      message: "You feel the need to try again for the sake of the world!",
+      message: "You've been teleported to a healing area in the Canyon Wild!",
       heal: "full", // Healing type ("full" or "partial")
     },
   },
@@ -2683,7 +2713,7 @@ window.OverworldMaps = {
         type: "Person",
         x: utils.withGrid(32),
         y: utils.withGrid(23),
-        src: "./images/characters/people/Kairo_Final_Boss.png",
+        src: "./images/characters/people/Kiera_Final_Boss.png",
         behaviorLoop: [{ type: "stand", direction: "up", time: 100 }],
         talking: [
           {

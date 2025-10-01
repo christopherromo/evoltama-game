@@ -150,7 +150,7 @@ class Combatant {
     if (this.status?.type === "recover") {
       return [
         { type: "textMessage", text: `${this.name} is recovered some health!` },
-        { type: "stateChange", recover: 5, onCaster: true },
+        { type: "stateChange", recover: 3, onCaster: true },
       ];
     }
     return [];

@@ -97,7 +97,7 @@ window.Actions = {
   mesmerizingGaze: {
     name: "Mesmerizing Gaze",
     description:
-      "The user users their psychic abilities to send harmful waves to the enemy.",
+      "The user uses their psychic abilities to send harmful waves to the enemy.",
     success: [
       { type: "textMessage", text: "{CASTER} uses {ACTION}!" },
       { type: "animation", animation: "voidHowl" },

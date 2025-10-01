@@ -59,7 +59,7 @@ window.Enemies = {
   },
   Kiera: {
     name: "Kiera",
-    src: "./images/characters/people/Kairo_Final_Boss.png",
+    src: "./images/characters/people/Kiera_Final_Boss.png",
     evolisks: {
       a: {
         evoliskId: "ee004",

@@ -176,11 +176,11 @@ class Overworld {
         },
         {
           type: "textMessage",
-          text: "I think Elder Beetle is looking for you! He should be in the main village, to the right and up!",
+          text: "I think the Elder Beetle is looking for you, he should be in the main village!",
         },
         {
           type: "textMessage",
-          text: "You can speak to Elder Beetle by pressing Enter when you face him.",
+          text: "You can speak to the Elder Beetle by pressing Enter when you face him.",
         },
         {
           type: "textMessage",
@@ -188,7 +188,7 @@ class Overworld {
         },
         {
           type: "textMessage",
-          text: "Additionally, you can move your Evolisk party around in the future through the Pause Menu!",
+          text: "Good luck out there!",
         },
       ]);
     }
