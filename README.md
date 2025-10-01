@@ -19,6 +19,8 @@ This project helped me learn the following:
    - This guide helped us quickly learn JavaScript and Game Development Essentials.
    - This project's main focus was to build upon this foundation.
 
+*All graphics in this game were created by Kristen Poteat and Christopher Romo. Please do not use these assets without asking.*
+
 ---
 # Evoltama Game
 
@@ -28,7 +30,7 @@ This project helped me learn the following:
 ---
 ## Project Overview
 
-This project is an exploration of JavaScript, HTML, and CSS. It was built with a guide as mentioned above. We learned the essentials, and then added some of our own features, like mutations. We also created a bunch of assets to use in the game, such as maps, characters, and "evolisks". We created our own story, and designed the progression.
+This project is an exploration of JavaScript, HTML, and CSS. It was built with a guide as mentioned above. We learned the essentials, and then added some of our own features, like mutations. We also created a bunch of assets to use in the game, such as maps, characters, and "evolisks". We created our own story, and designed the progression. Enjoy the amazing world of "Evoltama"!
 
 ---
 ## Running the Game
