@@ -301,7 +301,7 @@ window.OverworldMaps = {
               },
               {
                 type: "textMessage",
-                text: "I would like to tell you that all is well, but I'm afraid something is very wrong..",
+                text: "I would like to tell you that all is well, but I'm afraid something is very wrong...",
                 faceHero: "elder_beetle",
               },
               {
