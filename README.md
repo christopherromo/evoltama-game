@@ -1,6 +1,6 @@
 ## Important Info
 
-This is a project created for my programming the mobile web class at UCCS (Spring 2025 Semester). It is a game made with JavaScript, HTML, and CSS. It was created by a team of 2.
+This is a project created for my "Programming the Mobile Web" (CS 3110) class at UCCS (Spring 2025 Semester). It is a game made with JavaScript, HTML, and CSS. It was created by a team of 2.
 
 This project was built with the following tools:
    - JavaScript
